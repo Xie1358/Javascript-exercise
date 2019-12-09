@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="my_out"></div>
+
+
+<script>
+    let my_out = document.querySelector('#my_out');
+    let str = "abcdefg";
+
+    function showLine(s){
+        my_out.innerHTML += s + '<br>';
+        // my_out.innerHTML = my_out.innerHTML + s + '<br>';
+    }
+
+    showLine( str.charAt(2) ); //索引值從 0 開始
+    console.log( my_out.innerHTML);
+    showLine( str[2] );
+    console.log( my_out.innerHTML);
+    showLine( str.charCodeAt(2) );
+    console.log( my_out.innerHTML);
+    showLine( str.length );
+    console.log( my_out.innerHTML);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+
+<script>
+    let rect = document.querySelector('#rect');
+    let a = 11;
+    var b = 22;
+
+    function fn(n){
+        // let a = 1;
+        // var b = 2;
+        return a+b+n;
+    }
+
+    function colorCode(r=0, g=0, b=0){ // ES6 沒給值會用預設值
+        let c = r*256*256 + g*256 + b;
+        c = c.toString(16);
+        return '#' + '000000'.slice(c.length) + c;
+    }
+
+    console.log(colorCode(255));
+
+
+    // ES6
+    function myFunc2(a, ...b) {
+        console.log('a:' + a);
+        console.log('b:' + b);
+    }
+    myFunc2(7, 9, 12);
+
+    function sum(...n){
+        let s = 0;
+        n.forEach(function(v){
+            s += v;
+        });
+        return s;
+    }
+    console.log(sum(3,6,8,9));
+
+
+
+</script>
+</body>
+</html>

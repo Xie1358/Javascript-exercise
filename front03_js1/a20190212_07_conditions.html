@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<form name="form1" onsubmit="func();return false;">
+    <label for="age1">age: </label>
+    <input type="number" name="age" id="age1"><br>
+    <label for="gender">gender: </label>
+    <select name="gender" id="gender">
+        <option value="">請選擇</option>
+        <option value="男">男</option>
+        <option value="女">女</option>
+    </select>
+    <br>
+    <!--<input type="submit">-->
+    <button type="submit">submit</button>
+</form>
+
+<div id="info"></div>
+
+
+<script>
+    let info = document.querySelector('#info');
+
+
+    function func(){
+        let age = document.form1.age.value;
+        let gender = document.form1.gender.value;
+
+        if(age >= 18 && gender==='女'){
+            info.innerHTML = '<h2>歡迎</h2>';
+        } else {
+            info.innerHTML = '<h2>請勿進入</h2>';
+        }
+
+    }
+
+</script>
+</body>
+</html>
+

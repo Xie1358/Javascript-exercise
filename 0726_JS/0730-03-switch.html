@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<label for="score">分數</label>
+<input type="number" id="score" value="0" onkeyup="doTest()" onchange="doTest()">
+<br>
+
+<div id="my_out"></div>
+
+
+<script>
+    let my_out = document.querySelector('#my_out');
+    let score = document.querySelector('#score');
+
+    function doTest() {
+        let s = parseInt(score.value);
+        s = parseInt(s/10);
+        let g = '';
+
+        switch(s) {
+            case 10:
+            case 9:
+                g = 'A';
+                break;
+            case 8:
+                g = 'B';
+                break;
+            case 7:
+                g = 'C';
+                break;
+            case 6:
+                g = 'D';
+                break;
+            default:
+                g = 'F';
+        }
+        my_out.innerHTML = g;
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #97beff;
+            left: 100px;
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000000;
+            background-color: red;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+</div>
+<div id="info"></div>
+
+<script>
+    const rect = document.querySelector('#rect');
+    const info = document.querySelector('#info');
+    let b, i;
+    let count = 0;
+
+    const mDown = function(event){
+        rect.addEventListener('mousemove', mMove);//滑鼠按下去才監聽移動
+        // rect.addEventListener('mouseup', mUp);
+    };
+    const mUp = function(event){
+        rect.removeEventListener('mousemove', mMove);//滑鼠放開時解除 
+        // rect.removeEventListener('mouseup', mUp);
+    };
+    const mMove = function(event){
+        count += 2;
+        let c = count % 255;
+        b = document.createElement('div');
+        b.className = 'ball';
+        b.style.left = event.offsetX - 10 + 'px';
+        b.style.top = event.offsetY - 10 + 'px';
+        // b.style.backgroundColor = `rgb(${c},${c},255)`;
+        rect.appendChild(b);
+
+    };
+
+    rect.addEventListener('mousedown', mDown);//開頭 固定監聽mousedown mouseup
+    window.addEventListener('mouseup', mUp);
+    //window包含瀏覽器視窗顯示範圍 所以在視窗任何地方放開都有效 不會有rect的bug
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+<button onclick="myClick()">click me</button>
+
+<script>
+    // 'use strict'; // 會影響 this,this是關鍵字 不是屬性也不是方法
+    let rect = document.querySelector('#rect');
+
+    var myClick = function(a, b) {
+        console.log(this, a, b);
+    };
+
+
+    myClick(3, 4);
+    myClick.call(window, 10, 20);
+    myClick.call({}, 55, 66);
+    //console.log(this);
+
+    var person = {
+        name: 'bill',
+        age: 20,
+        showMe: function(){
+            return this.name + ' ' + this.age;
+            // function屬於person 所以this指到person
+        }
+    };
+
+    console.log( person.showMe() );
+
+</script>
+</body>
+</html>

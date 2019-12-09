@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>	Date objects</title>
+    <script src="lib/lodash.js"></script>
+</head>
+<body>
+
+<div id="rect"></div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+
+    const doRun = ()=>{
+        let s = (new Date()).toString();
+        // console.log(s)
+        // rect.innerHTML = new Date();
+        rect.innerHTML = s.split(' ')[4];
+        setTimeout(doRun, 1000);
+    };
+    doRun();
+
+
+</script>
+</body>
+</html>

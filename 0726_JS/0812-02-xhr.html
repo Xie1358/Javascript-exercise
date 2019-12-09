@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<textarea name="" id="" cols="30" rows="10"></textarea> <!--只是用來看頁面沒刷新 -->
+<!--  -->
+<div id="info"></div> <!-- 拿到的資料放在這 -->
+<button onclick="doAjax()">load</button>
+<script>
+
+    const info = document.querySelector('#info');
+// 200是正常回應 3開頭是轉向 404是用戶端的錯誤 500是伺服器本身錯誤
+// 按button 看console 2~4階段都是200, 第4階段做完
+    function doAjax(){
+        let xhr = new XMLHttpRequest(); // 建立XMLHttpRequest類型的物件
+        xhr.onreadystatechange = function(){ //onreadystatechange:狀態一改變就會觸發去檢查
+            console.log(this.readyState, this.status);//this指的是xhr物件
+            if(this.readyState===4 && this.status===200){//條件滿足代表東西已經傳完(第4階段且正常回應)
+                info.innerHTML = this.responseText;
+            }
+        };
+        xhr.open('GET', 'data/data01.txt', true); // async,非同步用true, 有3個參數 第二個是對像
+//GET是方法 也可用POST 後面還會再講
+//可以把true改false看hello位置差別 
+//因為false是同步 東西送回來才執行 所以等待的時間甚麼都不做 會浪費效能
+        xhr.send();//send時 readyState會跳到1
+        console.log('hello');
+        
+    }
+// 在網址列拷貝隨便貼到文字編輯器裡會看到 http 表示走http協定 如果直接用檔案開會是磁碟路徑C:開頭
+// 看console 按button load 不會理你
+</script>
+</body>
+</html>

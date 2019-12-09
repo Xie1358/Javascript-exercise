@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+
+
+<script>
+    let rect = document.querySelector('#rect');
+    // let str = "JavaScript Object Notation";
+    let str = "是一種由道格拉斯·克羅克福特構想和設計、輕量級的資";
+
+    let ar = str.split('');
+    let br = [12, 9, 32, 7, 5, 29];
+
+    rect.innerHTML = JSON.stringify(ar) + '<br>';
+    ar.sort();
+    rect.innerHTML += JSON.stringify(ar) + '<br>';
+
+    rect.innerHTML += JSON.stringify(br) + '<br>';
+    br.sort(function(a,b){
+        return a-b; //// 正值對調
+        // return b-a; 大到小
+    });
+    rect.innerHTML += JSON.stringify(br) + '<br>';
+
+    // 亂數排序
+    br.sort(function(){
+        return Math.random()-.5;
+        // Math.random值介於0~1 可等於0 但小於1 -0.5會一半正數一半負數
+    });
+    rect.innerHTML += JSON.stringify(br) + '<br>';
+
+</script>
+</body>
+</html>

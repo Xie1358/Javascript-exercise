@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<select name="" id="">
+
+</select>
+<!-- <div id="my_out"></div> -->
+
+
+<script>
+    // let my_out = document.querySelector('#my_out');
+    let mySel = document.querySelector('select'); //沒給id直接用select標籤名稱
+
+
+    let i;
+    for(i =1; i <=30; i++){
+        mySel.innerHTML += `<option value="${i}">${i}</option>`;
+        // 透過反引號包住的內容，會保留所有的換行和空行。
+        // mySel.innerHTML += '<option value="' + i + '">' + i + '</option>';
+    }
+    // console.log(`${i}`);
+
+</script>
+</body>
+</html>

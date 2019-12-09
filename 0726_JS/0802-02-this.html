@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+<button onclick="myClick()">click me</button>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+
+    const myClick = function(a, b) {
+        console.log(this, a, b);
+    };
+
+
+    myClick(3, 4); // 一般用這個 比較少用call ,call不懂沒差
+    myClick.call(window, 10, 20); // this 用 window
+    myClick.call({}, 55, 66);
+    //console.log(this);
+
+</script>
+</body>
+</html>

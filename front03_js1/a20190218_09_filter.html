@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    span.red {
+        color: red;
+    }
+</style>
+<body>
+
+<div id="rect"></div>
+
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let i;
+    const ar = [12,1,3,5,2,6,8,9,12];
+
+
+    let br = ar.filter(function(val){
+        return val%2===0; //過濾條件
+    });
+
+    rect.innerHTML = br.toString() + '<br>';
+
+
+    let cr = ar.map(function(val){
+        return val*val;
+    });
+    rect.innerHTML += cr.toString() + '<br>';
+
+    let dr = ar.map(function(val){
+        var className = val%2 ? '' : 'red';
+        return `<span class="${className}">${val}</span>`;
+    });
+    rect.innerHTML += dr.toString() + '<br>';
+</script>
+</body>
+</html>
+

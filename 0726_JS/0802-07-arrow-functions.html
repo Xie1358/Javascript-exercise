@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭頭函式</title>
+    <script src="lib/lodash.js"></script>
+</head>
+<body>
+
+<div id="rect"></div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+
+    const f = (()=>{
+        let n = 3; // n使用closure
+        return (a, b)=>{
+            n--;
+            if(n>=0)
+                return a * b;
+            else
+                return '----';
+        };
+    })(); // })後面的()是呼叫 因為直接呼叫 所以沒給名稱沒關係
+          // 講義5.2 第2頁
+        // function f1(name, age) { } 
+        // let f2 = (name, age) => { };  
+        // f1和f2一樣
+        // const f3 = ()=>{ }; 
+        // const f4 = n => n*n; 
+        // const f5 = function(n){ 
+        // f4和f5一樣 語法不同而已
+        //    return n*n; 
+        // };
+            // closure可減少全域變數的數量
+//當你看到一個 function 內 return 了另一個 function，
+//通常就是有用到閉包(closure)的概念
+
+    rect.innerHTML += f(2,3) + '<br>';
+    rect.innerHTML += f(4,5) + '<br>';
+    rect.innerHTML += f(6,7) + '<br>';
+    rect.innerHTML += f(8,9) + '<br>';
+
+
+</script>
+</body>
+</html>

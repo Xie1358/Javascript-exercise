@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    span.red {
+        color: red;
+    }
+</style>
+<body>
+
+<div id="rect"></div>
+
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let i;
+
+    var func2 = function (n){
+        return n*n;
+    };
+
+
+    rect.innerHTML += func(5) + '<br>';
+    rect.innerHTML += func() + '<br>';
+    rect.innerHTML += func2(7) + '<br>';
+
+    function func(n=10){
+        return n*n;
+    }
+
+</script>
+</body>
+</html>
+

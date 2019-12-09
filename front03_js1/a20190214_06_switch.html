@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    span.red {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<body>
+<input type="number" id="myinput" onkeyup="info.innerHTML='';"> <br>
+
+<button onclick="doConvert()">convert</button>
+
+
+<div id="info"></div>
+
+
+<script>
+    const myinput = document.querySelector('#myinput');
+    const info = document.querySelector('#info');
+
+    function doConvert(){
+        let v = parseInt(myinput.value);
+        let vv = parseInt(v/10);
+
+        if(v>=0 && v<=100) {
+            switch(vv){
+                case 10:
+                case 9:
+                    info.innerHTML = 'A';
+                    break;
+                case 8:
+                    info.innerHTML = 'B';
+                    break;
+                case 7:
+                    info.innerHTML = 'C';
+                    break;
+                case 6:
+                    info.innerHTML = 'D';
+                    break;
+                default:
+                    info.innerHTML = 'F';
+                    break;
+            }
+
+        } else {
+            info.innerHTML = '分數超出範圍';
+        }
+    }
+
+
+</script>
+</body>
+</html>
+

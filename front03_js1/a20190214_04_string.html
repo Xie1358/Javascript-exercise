@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    span.red {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<body>
+
+
+
+
+<div id="info"></div>
+
+
+<script>
+    const info = document.querySelector('#info');
+
+
+    const str = `土耳其裔中鋒坎特（Enes Kanter）
+    本季在紐約尼克陣中逐漸被冷落，在上場時間越來越少的情況下，
+    坎特也向球團要求交易，但在交易大限後卻仍留在隊上，
+    直到最近才與尼克完成買斷，而根據最新消息指出，
+    這名土耳其中鋒即將加盟波特蘭拓荒者。`;
+
+    let name = 'Bill';
+
+    info.innerHTML += str + '<br>';
+    info.innerHTML += `Hello, ${name} !` + '<br>';
+
+    name = 'Peter';
+    info.innerHTML += `Hello, ${name} !` + '<br>';
+
+
+</script>
+</body>
+</html>
+

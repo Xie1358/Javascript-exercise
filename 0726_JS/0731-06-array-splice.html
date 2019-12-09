@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+
+
+<script>
+    let rect = document.querySelector('#rect');
+    const ar = ["a","b","c","d","e","f","g","h","i"];
+
+    let br = ar.slice();
+    rect.innerHTML = JSON.stringify( br.splice(2, 3) ) + '<br>';// (2, 3) 索引, 刪除量
+    rect.innerHTML += JSON.stringify(br) + '<br>';
+    rect.innerHTML += '-----<br>';
+
+    br = ar.slice();
+    rect.innerHTML += JSON.stringify( br.splice(2, 0, 11, 22, 33) ) + '<br>'; // 刪除量是0 會變新增
+    rect.innerHTML += JSON.stringify(br) + '<br>';
+    rect.innerHTML += '-----<br>';
+
+    br = ar.slice();
+    rect.innerHTML += JSON.stringify( br.splice(2, 3, 11, 22, 33) ) + '<br>'; // 索引, 刪除量, 替換元素
+    rect.innerHTML += JSON.stringify(br) + '<br>';
+    rect.innerHTML += '-----<br>';
+</script>
+</body>
+</html>

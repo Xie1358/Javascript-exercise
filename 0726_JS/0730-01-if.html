@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<label for="gender">性別</label>
+<select id="gender" onchange="doTest()">
+    <option value="">--請選擇--</option>
+    <option value="female">女生</option>
+    <option value="male">男生</option>
+</select>
+<br>
+<label for="age">年齡</label>
+<input type="number" id="age" value="16" onkeyup="doTest()">
+<br>
+
+<div id="my_out"></div>
+
+
+<script>
+    let my_out = document.querySelector('#my_out');
+
+
+    function doTest() {
+        let age = parseInt(document.querySelector('#age').value);
+        let gender = document.querySelector('#gender').value;
+
+        if (gender === 'female' && age >= 18) {
+            my_out.innerHTML = '歡迎';
+        } else {
+            my_out.innerHTML = '禁止進入';
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

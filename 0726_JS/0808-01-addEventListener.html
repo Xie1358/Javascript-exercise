@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addEventListener, container</title>
+    <style>
+        #rect {
+            background-color: #0f0f97;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+    <button id="btn1">click me 1</button><br>
+    <button id="btn2">click me 2</button><br>
+    <button id="btn3">click me 3</button><br>
+</div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+    let btns = document.querySelectorAll('button');
+    let i;
+//event.currentTarget 屬性總會指向現在正處理該事件的事件監聽器所註冊的 DOM 物件，而 
+//event.target 屬性則是永遠指向觸發事件的 DOM 物件。
+//可以三個按鈕個別註冊事件處理器 變成要註冊三個 現在只註冊一個 用targe用區別按到誰
+    const handler1 = function(event){
+        // alert('hello~');
+        console.log(event.currentTarget, event.target);
+        //rect(此對象)是currentTarget,事件最底層元素是target
+    };
+
+
+    rect.addEventListener('click', handler1);
+
+
+
+
+</script>
+</body>
+</html>

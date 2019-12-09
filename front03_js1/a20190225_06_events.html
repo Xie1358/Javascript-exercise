@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    #rect {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        background-color: #b0e9ff;
+    }
+</style>
+<body>
+
+<div id="rect">
+</div>
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+
+    const func = event=>{
+        console.log('aaa');
+
+    };
+
+    // rect.addEventListener('click', func);
+
+
+    // rect.addEventListener('click', event=>{
+    //     console.log('bbb');
+    // });
+    // rect.addEventListener('click', event=>{
+    //     console.log('ccc');
+    // });
+
+    for(let i=0; i<10; i++) {
+        rect.addEventListener('click', func);
+        rect.addEventListener('click', event => {
+            console.log('ddd');
+        });
+    }
+
+
+
+
+</script>
+</body>
+</html>
+

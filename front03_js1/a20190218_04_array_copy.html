@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    #rect {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        background-color: #b0e9ff;
+    }
+    .ball {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #ff2f27;
+        border-radius: 50%;
+        color: white;
+        line-height: 40px;
+        text-align: center;
+    }
+</style>
+<body>
+
+<div id="rect"></div>
+
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let s;
+    const ar = [12, 99, 'aaa', ['bill', 25, 'male'] ];
+
+    const br = ar;
+
+    const cr = ar.slice(); // first level copy
+
+    ar[3][0] = 'flora';
+    ar[0] = 100;
+
+    console.log('ar:', ar);
+    console.log('br:', br);
+    console.log('cr:', cr);
+
+
+</script>
+</body>
+</html>
+

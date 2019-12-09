@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+<div id="info"></div>
+
+<button onclick="doAjax()">click me</button>
+
+
+<br>
+<input type="text">
+
+
+
+
+<script>
+function doAjax() {
+
+    fetch('./data/hello_ajax.txt?a=1')
+        .then(response=>{
+            return response.text();
+        })
+        .then(txt=>{
+            document.getElementById('info').innerHTML = txt;
+        });
+}
+
+
+
+
+</script>
+</body>
+</html>
+

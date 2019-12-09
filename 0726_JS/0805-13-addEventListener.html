@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+<button id="btn1">click me 1</button><br>
+<button id="btn2">click me 2</button><br>
+<button id="btn3">click me 3</button><br>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+    let btns = document.querySelectorAll('button');
+    let i;
+
+//handler1可以處理三個來源(btn1 2 3)  一對多,handler1,2對btn3(多對一)
+    const handler1 = function(event){
+        console.log('hello~');
+        console.log(event.currentTarget.id);
+        // console.log(event.currentTarget,event.target);
+    };
+    const handler2 = function(event){
+        console.log('hi~');
+    };
+//onclick是舊的寫法 addEventListener 0808有說明
+// html還是得用onclick比較簡單
+// 監聽btn1的click事件
+    btn1.addEventListener('click', handler1);
+    btn2.addEventListener('click', handler1);
+
+    btn3.addEventListener('click', handler1);
+    btn3.addEventListener('click', handler2);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+
+<div id="rect"></div>
+
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let i;
+    const ar = ["a","b","c","d","e","f","g","h","i"];
+    let br = ar.slice();
+
+    // 移除
+    rect.innerHTML += br.splice(2, 3) + '<br>';
+    rect.innerHTML += br + '<br>';
+
+    br = ar.slice();
+
+    // 新增, 插入元素
+    rect.innerHTML += br.splice(2, 0, 'bill', 'peter') + '<br>';
+    rect.innerHTML += br + '<br>';
+
+    br = ar.slice();
+    // 取代
+    rect.innerHTML += br.splice(2, 2, 'bill', 'peter') + '<br>';
+    rect.innerHTML += br + '<br>';
+</script>
+</body>
+</html>
+

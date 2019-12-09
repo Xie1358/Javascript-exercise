@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recursive call, 遞迴</title>
+</head>
+<body>
+
+<div id="rect"></div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+
+    const a = function() {
+        rect.innerHTML += 'a begin<br>';
+        b();
+        rect.innerHTML += 'a end<br>';
+    };
+
+    const b = function() {
+        rect.innerHTML += 'b begin<br>';
+        c();
+        rect.innerHTML += 'b end<br>';
+    };
+
+    const c = function() {
+        rect.innerHTML += 'c begin<br>';
+        // ....
+        rect.innerHTML += 'c end<br>';
+    };
+
+    a();
+
+    // 遞迴 吃資源 盡量用迴圈就好
+    const m = function(n){
+        if(n<=1)
+            return 1;
+        else
+            return n*m(n-1);
+    };
+    // m(5)=5*m(4), m(4)=4*m(3), ...
+    // 5*m(4) => 4*m(3) => 3*m(2) =>... =5*4*3*2*1=120
+    rect.innerHTML += m(5);
+</script>
+</body>
+</html>

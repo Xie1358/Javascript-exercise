@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="info"></div>
+<h2 class="myClass">aa</h2>
+<h3 class="myClass">bb</h3>
+<h4 class="myClass">cc</h4>
+
+<script>
+    var a = 10;
+    var b = a;
+    b = 5;
+    console.log(a);
+
+    var el = document.getElementById('info');
+    var ee = el;
+    ee.innerHTML = a;
+    // var 三隻小貓 ='3 cats';
+    document.getElementsByClassName('myClass')[0].innerHTML = '123';
+
+</script>
+</body>
+</html>
+

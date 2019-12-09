@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    #rect {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        background-color: #b0e9ff;
+    }
+    .ball {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #ff2f27;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+</style>
+<body>
+
+<div id="rect"></div>
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let b, i;
+
+    for(i=0; i<100; i++){
+        let k = i*17;
+        let x, y, size, bgc;
+
+        b = document.createElement('div');
+        b.className = 'ball';
+        size = 10+Math.floor(Math.random()*31);
+        b.style.left = Math.floor(Math.random()*800) + 'px';
+        b.style.top = Math.floor(Math.random()*600) + 'px';
+        b.style.width = size +'px';
+        b.style.height = size +'px';
+        bgc = Math.floor(Math.random()*360);
+        b.style.backgroundColor = `hsl(${bgc},100%,50%)`;
+        rect.appendChild(b);
+    }
+
+
+
+</script>
+</body>
+</html>
+

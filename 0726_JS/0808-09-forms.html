@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  -->
+<!-- action代表表單要送給誰 通常是後端程式 -->
+<!-- 用post送 參數不會在網址列上面 -->
+<form name="form1" action="" method="get"><!--因類似node的設定 所以這裡不能用POST  -->
+    <!-- 用get header裡會看到Query String ,post header裡會看到Form Data -->
+    <label for="account">帳號: </label><!--有for label點了才會拿到input的focus -->
+    <input type="text" name="account" id="account"><br>
+<!-- 一般id和name設成一樣 欄位一定要給name 要用表單方式送資料一定要下name 不然發不出去 -->
+<!-- 如沒name資料送不出去 Network的Headers的Query String Parameters會收不到 -->
+
+    <label for="password">密碼: </label>
+    <input type="password" name="password" id="password"><br>
+    <input type="submit" value="My Submit"><!-- 沒給value會依據瀏覽器版本用預設字 -->
+</form>
+<!-- console裡輸入 document.form1.account可拿到欄位 ,account是name 不是id
+    如果表單沒設名字 輸入 document.forms 可抓到表單集合類似陣列
+    document.forms[0]抓到第一個表單
+document.form1.account.value 拿到帳號
+document.form1.password.value 拿到密碼
+例子:
+開FB到記住好email和密碼的頁面 對密碼欄按右鍵檢查 得到密碼欄id=pass
+方法一: console輸入 document.querySelector('#pass').value 得到密碼, 下面方式也可
+//方法二            document.forms.login_form.pass.value 也可,
+ document.forms得知FB form的ID是login_form, 方法一較快 方法二需要一層一層找
+-->
+<script>
+
+</script>
+</body>
+</html>

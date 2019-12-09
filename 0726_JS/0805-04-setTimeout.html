@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/lodash.js"></script>
+</head>
+<body>
+
+<div id="rect"></div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+
+    for(let i=0; i<10; i++){
+        //等於建立10個I(1 ~ 10 )的區域變數 用var不行 特別例子
+        setTimeout(function(){
+            rect.innerHTML += i + '<br>';
+        }, 1000*i);
+    }
+
+</script>
+</body>
+</html>

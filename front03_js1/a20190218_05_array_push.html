@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+
+<div id="rect"></div>
+
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let i;
+    const ar = [];
+
+    for(i=1; i<=49; i++){
+        ar.push(i);
+    }
+
+    rect.innerHTML = ar + '<br>';
+    // rect.innerHTML = ar.toString();
+
+
+    ar.reverse();
+    rect.innerHTML += ar + '<br>';
+
+    ar.sort();
+    rect.innerHTML += ar + '<br>';
+
+    ar.sort(
+        function(a, b){
+            return a-b;
+        }
+    );
+    rect.innerHTML += ar + '<br>';
+
+    // 亂數排序
+    ar.sort(
+        function(a, b){
+            return Math.random() - .5;
+        }
+    );
+    rect.innerHTML += ar + '<br>';
+</script>
+</body>
+</html>
+

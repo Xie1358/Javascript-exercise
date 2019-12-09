@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    span.red {
+        color: red;
+    }
+</style>
+<body>
+
+<div id="rect"></div>
+
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let p = [2,3,4,5,6,7];
+
+
+    var func = function(ar){
+        let ar2 = JSON.parse(JSON.stringify(ar));
+        ar2.pop();
+        return ar2;
+    };
+
+    let k = func(p);
+
+    rect.innerHTML += p.toString() + '<br>';
+    rect.innerHTML += k.toString() + '<br>';
+    rect.innerHTML += '----<br>';
+    p[0] = 100;
+    rect.innerHTML += p.toString() + '<br>';
+    rect.innerHTML += k.toString() + '<br>';
+</script>
+</body>
+</html>
+

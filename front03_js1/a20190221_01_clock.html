@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    #rect {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        background-color: #b0e9ff;
+    }
+    .ball {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #ff2f27;
+        border-radius: 50%;
+        color: white;
+        line-height: 40px;
+        text-align: center;
+        top: 100px;
+    }
+</style>
+<body>
+
+<div id="rect">
+    <div class="ball" style="left:0"></div>
+</div>
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    const ball = document.querySelector('.ball');
+
+    const run = ()=>{
+        var x = parseInt(ball.style.left);
+
+        ball.style.left = (x+5) + 'px';
+
+        if(x<800){
+            setTimeout(run, 30);
+        }
+    };
+
+    run();
+
+</script>
+</body>
+</html>
+

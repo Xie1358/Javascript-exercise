@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+<button onclick="myClick()">click me</button>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+    let a;
+    // 前端工具95%以上都是用node.js開發
+    // myClick(); // 放這會錯 因為還沒執行到
+    // const myClick = function() 所以沒有myClick()
+
+    const myClick = function() {
+        alert('Hello~' + a);
+    };
+
+    // 效果同上
+    // function myClick(){
+    //     alert('Hello~' + a);
+    // };
+
+
+    // myClick(); // 一進網頁就呼叫  
+
+
+
+</script>
+</body>
+</html>

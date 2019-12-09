@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    #rect {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        background-color: #b0e9ff;
+    }
+    .ball {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #ff2f27;
+        border-radius: 50%;
+        color: white;
+        line-height: 40px;
+        text-align: center;
+    }
+</style>
+<body>
+
+<div id="rect"></div>
+
+
+
+<script>
+
+    const rect = document.querySelector('#rect');
+    let s;
+    const ar = [12, 99, 'aaa', {name:'bill', age:25}];
+
+    ar[2.5] = 2.5;
+    ar[9] = 9;
+
+    for(s in ar) {
+        rect.innerHTML += `${s} : ${ar[s]}<br>`;
+    }
+</script>
+</body>
+</html>
+

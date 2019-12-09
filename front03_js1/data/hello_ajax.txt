@@ -1,0 +1,7 @@
+<h2>
+Hello Ajax
+</h2>
+
+<h2>
+Hello ~
+</h2>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/lodash.js"></script>
+</head>
+<body>
+
+<div id="rect"></div>
+
+<script>
+    'use strict';
+    let rect = document.querySelector('#rect');
+
+    let myCount = 0;
+
+    const doRun = ()=>{
+        myCount ++;
+        rect.innerHTML += myCount + '<br>';
+
+        setTimeout(doRun, 500);
+        setTimeout(doRun, 500);//是setTimeout呼叫doRun 所以不是遞迴
+    };
+
+    doRun();
+
+
+</script>
+</body>
+</html>

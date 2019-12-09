@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>時鐘鐘面數字</title>
+    <style>
+        #rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #c0e8ff;
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid gray;
+            background-color: red;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rect">
+<!--    <div class="ball">88</div>-->
+</div>
+
+
+<script>
+    let rect = document.querySelector('#rect');
+    let b, i, x, y;
+    let ballNum = 12; // 圓形的數量
+    let unitAng = Math.PI*2/ballNum; //單位角度
+    // console.log(unitAng);
+
+
+    for(i=0; i<ballNum; i++) {
+        // console.log(unitAng);
+        b = document.createElement('div');
+        b.className = 'ball';
+        b.innerHTML = i+1;
+        // 圓上座標(cos(),sin()) 
+        // 圓心 400 = 800/ 2 , 300=600/2
+        x = 400 + Math.cos(unitAng*i)*250;//Math.cos(unitAng*i)值在-1~1之間 乘以要的半徑值
+        // console.log(x-400);
+        y = 300 + Math.sin(unitAng*i)*250;
+        // x y是原點座標
+        b.style.left = x + 'px';
+        b.style.top = y + 'px';
+        rect.appendChild(b);
+
+    }
+
+    // const doRun = ()=>{
+    //     balls.forEach((el)=>{
+    //         let x = parseInt(el.style.left);
+    //         x += 2 + parseInt(Math.random()*4);
+    //         el.style.left = x + 'px';
+    //     });
+    //     setTimeout(doRun, 30);
+    // };
+    
+    // doRun();
+</script>
+</body>
+</html>

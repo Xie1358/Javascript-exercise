@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect"></div>
+
+
+<script>
+    let rect = document.querySelector('#rect');
+    let s;
+    const person = {
+        name: 'david',
+        age: 30,
+        gender: 'male',
+    };
+
+    const ar = [2,5,7,8];
+    // const br = [1,2,3,4,5,6,7,8];
+
+
+    console.log('age' in person); // 是不是物件的屬性名稱
+    console.log('sex' in person);
+
+    console.log('ar instanceof Array:', ar instanceof Array); // 測試某個物件是不是屬於某個類型
+    console.log('ar instanceof Object:', ar instanceof Object);
+    console.log('person instanceof Array:', person instanceof Array); // 測試某個物件是不是屬於某個類型
+    console.log('person instanceof Object:', person instanceof Object);
+
+    for(let i=1; i<10; i++){
+        console.log(i, ar.indexOf(i)); // 陣列裡有沒有某個元素
+    }
+    // for(let x=1; x<10; x++){
+    //     console.log(x, br.indexOf(x)); // 陣列裡有沒有某個元素
+    // }
+
+</script>
+</body>
+</html>

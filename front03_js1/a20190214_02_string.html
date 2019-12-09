@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div id="info"></div>
+
+
+<script>
+
+    let info = document.querySelector('#info');
+
+    let str = "土耳其中鋒選擇加盟拓荒者坎特目標總冠土耳其中鋒選擇加盟拓荒者坎特目標總冠";
+
+    info.innerHTML += 'indexOf 中鋒: ' + str.indexOf('中鋒') + '<br>';
+    info.innerHTML += 'indexOf 中鋒: ' + str.indexOf('中鋒', 4) + '<br>';
+    info.innerHTML += 'lastIndexOf 中鋒: ' + str.lastIndexOf('中鋒') + '<br>';
+    info.innerHTML += 'lastIndexOf 中鋒: ' + str.lastIndexOf('中鋒', 20) + '<br>';
+    info.innerHTML += str.split('土耳其').join('日本');
+
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="rect">
+    <div class="my">1</div>
+    <div class="my">2</div>
+    <div class="my">3</div>
+    <div class="my">4</div>
+    <div class="my">5</div>
+    <div class="my">6</div>
+
+</div>
+
+
+<script>
+    let rect = document.querySelector('#rect');
+    let mys = rect.querySelectorAll('.my'), // NodeList
+        i,
+        ar = [];
+//說明文件(MDN)的中括號是選擇性的參數 可以不給
+    console.log(mys);
+    for(i=0; i<mys.length; i++){
+        ar.push(mys[i]);
+        // 內容物是DOM element,外殼是array
+    }
+   // 目前ar 1 ~ 6
+    ar.reverse();
+    console.log(ar);
+   // 目前ar 6 ~ 1
+    for(i=0; i<ar.length; i++){
+        rect.appendChild(ar[i]);
+    }
+// appendChild會把節點抽出來再放進去 往後接
+// 所以抽出6放回6 抽出5放回5(接在6後)....~1
+// 所以變 6~1
+ 
+</script>
+</body>
+</html>
