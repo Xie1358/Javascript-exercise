@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="num">請輸入</label>
+    <input type="" name="" id="num" value="0" onchange="fun()">
+    <div class="start" id="start"></div>
+
+    <script>
+
+
+        // console.log('1')
+        function fun() {
+            let start = document.querySelector('#start')
+            // console.log('2')
+            // console.log(start)
+            let num = document.querySelector('#num').value
+            for (let j = num; j > 0; j--) {
+                // console.log('3')
+                for (let i = j; i > 0; i--) {
+                    // console.log('4')
+                    start.innerHTML += '*';
+                    // document.write("*");
+                }
+                start.innerHTML += "<br/>"
+                // document.write("<br/>");
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

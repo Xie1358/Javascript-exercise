@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body{
+            width: 400px;
+            margin: 0 auto;
+        }
+        .lR{
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>guess number</h1>
+
+    <label for="gF">please guess</label>
+    <input type="text" id="gF" class="gF">
+    <input type="submit" value="確定" class="gS">
+
+    <div class="rP">
+        <p class="lG"></p>
+        <p class="lR"></p>
+        <p class="lH"></p>
+    </div>
+
+    <script>
+        let rN = Math.floor(Math.random() * 100) + 1
+        let gF = document.querySelector('.gF')
+        let gS = document.querySelector('.gS')
+        let lG = document.querySelector('.lG')
+        let lR = document.querySelector('.lR')
+        let lH = document.querySelector('.lH')
+
+        let gC = 1
+        let rB
+        gF.focus()
+
+        function cG() {
+            console.log(rN)
+            let uG = Number(gF.value)
+            console.log(uG)
+            if(gC==1){
+                lG.textContent='上次猜的數: '
+            }
+            lG.textContent += uG + " "
+            if(uG==rN){
+                lR.textContent="恭喜猜對"
+                lR.style.backgroundColor='green'
+                lH.textContent=''
+                setGameOver();
+            }else if(gC==10){
+                lR.textContent="game over"
+                lR.style.backgroundColor='red'
+                lH.textContent=''
+                setGameOver();
+            }else{
+                lR.textContent='猜錯瞜'
+                lR.style.backgroundColor='red'
+                if(uG<rN){
+                    lH.textContent='too small'
+                }else if(uG>rN){
+                    lH.textContent='too big'
+                }
+
+            }
+            gC++
+            gF.value=''
+            gF.focus()
+        }
+        gS.addEventListener('click', cG)
+        function setGameOver(){
+            gF.disabled = true
+            gS.disabled = true
+            rB = document.createElement('button')
+            rB.textContent='重來'
+            document.body.appendChild(rB)
+            rB.addEventListener('click',rsG)
+        }
+        function rsG(){
+            gC = 1
+           let rP = document.querySelectorAll('.rP p')
+            for(let i=0;i<rP.length;i++){
+                rP[i].textContent=''
+            }
+            rB.parentNode.removeChild(rB)
+            gF.disabled = false
+            gS.disabled = false
+            gF.focus()
+            rN = Math.floor(Math.random() * 100) + 1
+        }
+    </script>
+</body>
+</html>
