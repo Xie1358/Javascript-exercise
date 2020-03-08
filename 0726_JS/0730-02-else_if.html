@@ -17,10 +17,15 @@
 
 <script>
     let my_out = document.querySelector('#my_out');
-
+    
+    // let s放這的話會出錯 因為一進來就抓到值　所以就不會再動了
+    // let s = (document.querySelector('#score').value);
+    // 如要放這 先拿參照就好
+    // let score = parseInt(document.querySelector('#score'));
 
     function doTest() {
         let s = parseInt(document.querySelector('#score').value);
+        // let s = parseInt(score.value);
         let g = '';
 
         if(s >=90){
